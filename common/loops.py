@@ -11,11 +11,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import vizdoom as vzd
 
-from stable_baselines.common import make_vec_env
-from stable_baselines.common.policies import CnnPolicy, CnnLstmPolicy, CnnLnLstmPolicy, BasePolicy
-from stable_baselines.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
-from stable_baselines import PPO2
-from stable_baselines.common.vec_env import SubprocVecEnv, DummyVecEnv
+from stable_baselines3.common import make_vec_env
+from stable_baselines3.common.policies import CnnPolicy, CnnLstmPolicy, CnnLnLstmPolicy, BasePolicy
+from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
+from stable_baselines3 import PPO2
+from stable_baselines3.common.vec_env import SubprocVecEnv, DummyVecEnv
 from common.game_wrapper import DoomEnv
 from common.utils import linear_schedule, collect_kv, get_img_from_fig
 from common.evaluate_recurrent_policy import RecurrentEvalCallback

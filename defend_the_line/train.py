@@ -12,10 +12,10 @@ PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
-from stable_baselines.common import make_vec_env
-from stable_baselines.common.policies import CnnPolicy
-from stable_baselines.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
-from stable_baselines import PPO2
+from stable_baselines3.common import make_vec_env
+from stable_baselines3.common.policies import CnnPolicy
+from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
+from stable_baselines3 import PPO2
 from common.game_wrapper import DoomEnv
 from common.utils import linear_schedule
 from constants import *

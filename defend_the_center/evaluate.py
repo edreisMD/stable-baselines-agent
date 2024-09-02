@@ -15,9 +15,9 @@ sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 import tqdm
 import numpy as np
 
-from stable_baselines.common.evaluation import evaluate_policy
-from stable_baselines.common.policies import CnnPolicy
-from stable_baselines import PPO2, A2C
+from stable_baselines3.common.evaluation import evaluate_policy
+from stable_baselines3.common.policies import CnnPolicy
+from stable_baselines3 import PPO2, A2C
 from common.game_wrapper import DoomEnv
 from constants import *
 from params import *
