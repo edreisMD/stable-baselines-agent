@@ -10,7 +10,7 @@ import vizdoom as vzd
 import matplotlib.pyplot as plt
 import numpy as np
 
-from stable_baselines.common.env_checker import check_env
+from stable_baselines3.common.env_checker import check_env
 from common.game_wrapper import DoomEnv
 from common.utils import make_expand_action_f
 

@@ -7,7 +7,7 @@
 
 import tensorflow as tf
 
-from stable_baselines.common.policies import *
+from stable_baselines3.common.policies import *
 
 
 def create_augmented_nature_cnn(n_extra_features):
@@ -22,7 +22,7 @@ def create_augmented_nature_cnn(n_extra_features):
 
     def augmented_nature_cnn(scaled_images, **kwargs):
         """
-        Copied from stable_baselines policies.py.
+        Copied from stable_baselines3 policies.py.
         This is nature CNN head where last channel of the image contains
         direct features.
 

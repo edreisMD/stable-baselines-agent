@@ -1,4 +1,7 @@
 # ViZDoom Bot
+
+*This is a fork of the original [stable-baselines-agent repository](https://github.com/ViZDoomBot/stable-baselines-agent) aimed to link to the project GameNGen, with some modifications such as stable-baselines3 instead of stable-baselines and updated requirements. Please note that not all the code is compatible with stable-baselines3, just few scripts that are necessary for this implementation of GameNGen.*
+
 We're ViZDoom Bot team of CSCI527 Spring 2021. This repository contains
 all the code and part of saved model weights of our team throughout
 the whole semester. Please visit [our website](https://vizdoombot2021.netlify.app/)

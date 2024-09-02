@@ -4,13 +4,13 @@ import gym
 import numpy as np
 import tensorflow as tf
 
-from stable_baselines import logger
-from stable_baselines.common import explained_variance, ActorCriticRLModel, tf_util, SetVerbosity, TensorboardWriter
-from stable_baselines.common.runners import AbstractEnvRunner
-from stable_baselines.common.policies import ActorCriticPolicy, RecurrentActorCriticPolicy
-from stable_baselines.common.schedules import get_schedule_fn
-from stable_baselines.common.tf_util import total_episode_reward_logger
-from stable_baselines.common.math_util import safe_mean
+from stable_baselines3 import logger
+from stable_baselines3.common import explained_variance, ActorCriticRLModel, tf_util, SetVerbosity, TensorboardWriter
+from stable_baselines3.common.runners import AbstractEnvRunner
+from stable_baselines3.common.policies import ActorCriticPolicy, RecurrentActorCriticPolicy
+from stable_baselines3.common.schedules import get_schedule_fn
+from stable_baselines3.common.tf_util import total_episode_reward_logger
+from stable_baselines3.common.math_util import safe_mean
 
 
 class AugmentedPPO2(ActorCriticRLModel):

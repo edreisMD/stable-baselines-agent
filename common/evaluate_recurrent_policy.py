@@ -13,13 +13,13 @@ import gym
 import numpy as np
 
 from typing import Callable, List, Optional, Tuple, Union, Dict, Any
-from stable_baselines.common.vec_env import VecEnv, sync_envs_normalization, DummyVecEnv
-from stable_baselines.common.callbacks import BaseCallback, EventCallback
-from stable_baselines.common.vec_env.vec_normalize import VecNormalize
-from stable_baselines import logger
+from stable_baselines3.common.vec_env import VecEnv, sync_envs_normalization, DummyVecEnv
+from stable_baselines3.common.callbacks import BaseCallback, EventCallback
+from stable_baselines3.common.vec_env.vec_normalize import VecNormalize
+from stable_baselines3 import logger
 
 if typing.TYPE_CHECKING:
-    from stable_baselines.common.base_class import BaseRLModel  # pytype: disable=pyi-error
+    from stable_baselines3.common.base_class import BaseRLModel  # pytype: disable=pyi-error
 
 
 def evaluate_recurrent_policy(

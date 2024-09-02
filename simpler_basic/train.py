@@ -12,10 +12,10 @@ PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
-from stable_baselines.common import make_vec_env
-from stable_baselines.common.policies import CnnPolicy
-from stable_baselines.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
-from stable_baselines import PPO2
+from stable_baselines3.common.env_util import make_vec_env
+from stable_baselines3.ppo import CnnPolicy
+from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
+from stable_baselines3.ppo import PPO
 from common.game_wrapper import DoomEnv
 from common.utils import linear_schedule
 from constants import *
@@ -35,23 +35,23 @@ def train():
     }
     env = make_vec_env(DoomEnv, n_envs=NUM_ENVS, env_kwargs=env_kwargs)
 
-    try:
-        agent = PPO2.load(SAVE_PATH, env=env)
-        agent.learning_rate = linear_schedule(LEARNING_RATE_BEG, LEARNING_RATE_END, verbose=True)
-        print("Model loaded")
-    except ValueError:
-        print("Failed to load model, training from scratch...")
-        agent = PPO2(
-            CnnPolicy, env,
-            gamma=DISCOUNT_FACTOR,
-            n_steps=MAX_STEPS_PER_EPISODE,
-            ent_coef=ENTROPY_COEF, vf_coef=CRITIC_COEF,
-            learning_rate=linear_schedule(LEARNING_RATE_BEG, LEARNING_RATE_END, verbose=True),
-            max_grad_norm=GRADS_CLIP_NORM,
-            noptepochs=EPOCHS_PER_BATCH,
-            cliprange=EPSILON,
-            verbose=True,
-        )
+    # try:
+    #     agent = PPO.load(SAVE_PATH, env=env)
+    #     agent.learning_rate = linear_schedule(LEARNING_RATE_BEG, LEARNING_RATE_END, verbose=True)
+    #     print("Model loaded")
+    # except ValueError:
+    print("Failed to load model, training from scratch...")
+    agent = PPO(
+        CnnPolicy, env,
+        gamma=DISCOUNT_FACTOR,
+        n_steps=MAX_STEPS_PER_EPISODE,
+        ent_coef=ENTROPY_COEF, vf_coef=CRITIC_COEF,
+        learning_rate=linear_schedule(LEARNING_RATE_BEG, LEARNING_RATE_END, verbose=True),
+        max_grad_norm=GRADS_CLIP_NORM,
+        n_epochs=EPOCHS_PER_BATCH,
+        clip_range=EPSILON,
+        verbose=True,
+    )
 
     # Save a checkpoint periodically
     checkpoint_callback = CheckpointCallback(

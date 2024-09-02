@@ -5,7 +5,7 @@
 # @Date  : 2/25/21 1:02 PM
 # @Desc  : Description goes here
 
-from stable_baselines.common.env_checker import check_env
+from stable_baselines3.common.env_checker import check_env
 from common.game_wrapper import DoomEnv
 
 

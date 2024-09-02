@@ -3,18 +3,18 @@
 # @File  : vec_curiosity_wrapper.py
 # @Author: Nghi, Harry
 # @Date  : 3/15/21 3:22 AM
-# @Desc  : https://github.com/NeoExtended/stable-baselines/blob/master/stable_baselines/common/vec_env/vec_curiosity_reward.py
+# @Desc  : https://github.com/NeoExtended/stable-baselines/blob/master/stable_baselines3/common/vec_env/vec_curiosity_reward.py
 
 import logging
 import sys
 
 import numpy as np
 import tensorflow as tf
-from stable_baselines.common import tf_util, tf_layers
-from stable_baselines.common.buffers import ReplayBuffer
-from stable_baselines.common.input import observation_input
-from stable_baselines.common.running_mean_std import RunningMeanStd
-from stable_baselines.common.vec_env import VecEnvWrapper
+from stable_baselines3.common import tf_util, tf_layers
+from stable_baselines3.common.buffers import ReplayBuffer
+from stable_baselines3.common.input import observation_input
+from stable_baselines3.common.running_mean_std import RunningMeanStd
+from stable_baselines3.common.vec_env import VecEnvWrapper
 from gym.spaces import Discrete
 
 from common.vec_tf_wrapper import BaseTFWrapper

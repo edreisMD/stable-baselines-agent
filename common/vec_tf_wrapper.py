@@ -3,7 +3,7 @@
 # @File  : vec_tf_wrapper.py
 # @Author: harry
 # @Date  : 3/15/21 3:23 AM
-# @Desc  : https://github.com/NeoExtended/stable-baselines/blob/master/stable_baselines/common/vec_env/vec_tf_wrapper.py
+# @Desc  : https://github.com/NeoExtended/stable-baselines/blob/master/stable_baselines3/common/vec_env/vec_tf_wrapper.py
 
 import json
 import os
@@ -12,14 +12,14 @@ from abc import ABC, abstractmethod
 from collections import OrderedDict
 
 import tensorflow as tf
-from stable_baselines.common import save_util
-from stable_baselines.common.vec_env import VecEnvWrapper
+from stable_baselines3.common import save_util
+from stable_baselines3.common.vec_env import VecEnvWrapper
 
 
 class BaseTFWrapper(VecEnvWrapper, ABC):
     """
     Base class for wrappers which incorporate ML models like curiosity. Helps with saving and loading.
-    Methods are copied from stable_baselines.common.BaseRLModel and stable_baselines.common.ActorCriticRLModel.
+    Methods are copied from stable_baselines3.common.BaseRLModel and stable_baselines3.common.ActorCriticRLModel.
     :param env: (gym.Env) The environment to wrap.
     :param _init_setup_model: (bool) Boolean indicating weather the setup_model() method should be called on init.
     """

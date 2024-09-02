@@ -20,8 +20,8 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
-from stable_baselines.common.policies import CnnPolicy
-from stable_baselines import PPO2, A2C
+from stable_baselines3.common.policies import CnnPolicy
+from stable_baselines3 import PPO2, A2C
 from common.game_wrapper import DoomEnv
 from common.utils import get_img_from_fig
 from constants import *

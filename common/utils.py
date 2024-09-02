@@ -8,7 +8,7 @@
 import cv2
 import io
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 import math
 
 from typing import Tuple, Dict, List, Any, Callable
